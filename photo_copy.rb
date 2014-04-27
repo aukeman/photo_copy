@@ -81,14 +81,14 @@ Dir.open( source ) do |d|
         
     message="Copying #{counter} of #{valid_files.length}; #{targetFile}...                "
 
-    col=`tput cols`
+    col=`/usr/bin/tput cols`
 
     print message.slice(0,col.to_i-15)
 
     $stdout.flush
         
 #    `xcopy /F /Y /I \"#{sourceFile}\" \"#{targetDir}\"` #windows-specific
-    `cp --preserve=timestamps \"#{sourceFile}\" \"#{targetDir}\"`
+    `/bin/cp --preserve=timestamps \"#{sourceFile}\" \"#{targetDir}\"`
         
     #print "\r" # carriage return
     #$stdout.flush
